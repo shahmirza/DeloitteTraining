@@ -1,0 +1,68 @@
+<mvc:View controllerName="ui5Trainingsession1.day1.controller.S1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<HBox>
+						<Label text="Employee Name:" class="sapUiSmallMarginTop"></Label>
+						<Input id="idName" placeholder="Enter Name" class="sapUiTinyMarginTop" showValueHelp="true"/>
+						<Label text="Employee Age:" class="sapUiSmallMarginTop sapUiMediumMarginBegin"></Label>
+						<Input id="idAge" placeholder="Enter Age" class="sapUiTinyMarginTop"/>
+						<Button text="Submit" class="sapUiTinyMarginBegin sapUiTinyMarginTop" press="onSubmit" icon="sap-icon://arrow-right"/>
+					</HBox>
+					<HBox>
+						<Label text="Create:" class="sapUiSmallMarginTop"/>
+						<CheckBox/>
+					</HBox>
+					<Panel id="idPanel1" expandable="true" expanded="false" headerText="Details">
+						<content>
+							<Table id="idTab1" mode="SingleSelectLeft" items="{/emps}" selectionChange="onSelection">
+								<headerToolbar>
+									<Toolbar>
+										<content>
+											<Title text="Results" level="H2"/>
+											<ToolbarSpacer/>
+											<Button id="idDelete" text="Delete" icon="sap-icon://delete" enabled="true" tooltip="Delete" press="onDelete"/>
+										</content>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="auto">
+										<Text text="Employee ID"/>
+									</Column>
+									<Column width="auto">
+										<Text text="Employee Name"/>
+									</Column>
+									<Column width="auto">
+										<Text text="Employee Age"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{empId}"/>
+										</cells>
+										<cells>
+											<Input value="{empName}"/>
+										</cells>
+										<cells>
+											<ObjectStatus text="{empAge}" state="{path:'empAge', formatter: '.formatter.statusText'}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</Panel>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button text="Go to Detail" press="onDetail"/>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

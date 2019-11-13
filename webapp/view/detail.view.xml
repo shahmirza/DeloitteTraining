@@ -1,0 +1,15 @@
+<mvc:View controllerName="ui5Trainingsession1.day1.controller.detail" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>titleDetail}" showNavButton="true" navButtonPress="onBack">
+				<content>
+					<VBox>
+						<Text id="idText1" text="This is second view"/>
+						<Text id="idText2"/>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
