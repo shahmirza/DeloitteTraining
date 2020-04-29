@@ -18,7 +18,7 @@ sap.ui.define([
 
 		onSubmit: function(oEvt) {
 			var sName = this.getView().byId("idName").getValue();
-			
+			// 
 			// var oView = this.getView();
 			// var oInput = oView.byId("idName");
 			
